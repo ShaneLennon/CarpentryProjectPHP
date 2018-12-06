@@ -65,7 +65,7 @@
             echo $totalInc;
             
             $this->materialDAO->insertMaterial($item, $description, $unitExcl, $totalExcl, $totalInc);
-            header('Location: http://localhost/CarpentryProject/controllers/MaterialsController.php?action=getAllMaterials');
+            header('Location: http://localhost:8080/CarpentryProject/controllers/MaterialsController.php?action=getAllMaterials');
         }
 
         function getAllMaterials(){
@@ -79,7 +79,7 @@
         function showInsertMaterialForm()
         {
             echo "In showInsertMaterialForm()";
-            header("location: http://localhost/CarpentryProject/view/insertMaterial.html"); 
+            header("location: http://localhost:8080/CarpentryProject/view/insertMaterial.html"); 
         }
 
         function deleteMaterial()
@@ -90,7 +90,7 @@
             echo "materialID2 :" . $materialID ."<br>";
             echo "customerID2 :" . $customerId . "<br>";
             $this->materialDAO->deleteMaterial($materialID);
-            header('Location: http://localhost/CarpentryProject/controllers/MaterialsController.php?action=getAllMaterials');
+            header('Location: http://localhost:8080/CarpentryProject/controllers/MaterialsController.php?action=getAllMaterials');
         }
 
         function showUpdateMaterialForm()
@@ -123,12 +123,12 @@
             $totalInc = $_POST['totalInc'];
             echo "totalInc: " . $totalInc . "<br>";
             $this->materialDAO->updateMaterial($materialId, $item, $description, $unitExcl, $totalExcl, $totalInc);
-            header('Location: http://localhost/CarpentryProject/controllers/MaterialsController.php?action=getAllMaterials');
+            header('Location: http://localhost:8080/CarpentryProject/controllers/MaterialsController.php?action=getAllMaterials');
         }
 
         function showMaterialSearchForm()
         {
-            header("location: http://localhost/CarpentryProject/view/materialSearch.html"); 
+            header("location: http://localhost:8080/CarpentryProject/view/materialSearch.html"); 
         }
 
         function searchForMaterial()

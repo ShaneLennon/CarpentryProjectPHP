@@ -46,7 +46,7 @@
                 $this->updateCustomer();
                 break;
             case "showCustomerSearchForm":
-                header("location: http://localhost/CarpentryProject/view/customerSearch.html"); 
+                header("location: http://localhost:8080/CarpentryProject/view/customerSearch.html"); 
                 break;
             }
         }
@@ -64,7 +64,7 @@
             $finishdate = $_POST['finishdate'];                       
             //include('viewCustomers.php');
             $this->customerDAO->insertCustomer($firstname, $surname, $phonenumber, $address, $email, $description, $recommendedBy, $year, $startdate, $finishdate);
-            header('Location: http://localhost/CarpentryProject/controllers/CustomersController.php?action=getAllCustomers');
+            header('Location: http://localhost:8080/CarpentryProject/controllers/CustomersController.php?action=getAllCustomers');
         }
 
         function updateCustomer(){
@@ -82,7 +82,7 @@
             $startdate = $_POST['startdate'];
             $finishdate = $_POST['finishdate'];                       
             $this->customerDAO->updateCustomer($customerId, $firstname, $surname, $phonenumber, $address, $email, $description, $recommendedBy, $year, $startdate, $finishdate);
-            header('Location: http://localhost/CarpentryProject/controllers/CustomersController.php?action=getAllCustomers');
+            header('Location: http://localhost:8080/CarpentryProject/controllers/CustomersController.php?action=getAllCustomers');
         }
 
         function searchForCustomer(){
@@ -114,13 +114,13 @@
             echo "In deleteCustomer()";
             $customerID = $_GET['customerID'];
             $this->customerDAO->deleteCustomer($customerID);
-            header('Location: http://localhost/CarpentryProject/controllers/CustomersController.php?action=getAllCustomers');
+            header('Location: http://localhost:8080/CarpentryProject/controllers/CustomersController.php?action=getAllCustomers');
         }
 
         function showInsertCustomerForm()
         {
             echo "In showInsertCustomerForm()";
-            header("location: http://localhost/CarpentryProject/view/insertCustomer.html"); 
+            header("location: http://localhost:8080/CarpentryProject/view/insertCustomer.html"); 
         }
 
         function showUpdateCustomerForm()

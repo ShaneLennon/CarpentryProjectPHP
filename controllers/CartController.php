@@ -85,7 +85,7 @@
                 // $allMaterials = $this->materialDAO->getAllMaterials();
                 // $customer = $this->customerDAO->getCustomerByID($customerID);
                 // include('../view/viewCustomerCart.php');
-                header("location: http://localhost/CarpentryProject/controllers/MaterialsController.php?action=getAllMaterials&customerID=".$customerID); 
+                header("location: http://localhost:8080/CarpentryProject/controllers/MaterialsController.php?action=getAllMaterials&customerID=".$customerID); 
 
                 
         }
@@ -131,7 +131,7 @@
 
                 $this->cartDAO->updateCart($customerID,$materialID,$materialQuantity+1);
             }
-                header("Location: http://localhost/CarpentryProject/controllers/CartController.php?action=getAllCartMaterials&customerID=".$customerID."&materialID=".$materialID);
+                header("Location: http://localhost:8080/CarpentryProject/controllers/CartController.php?action=getAllCartMaterials&customerID=".$customerID."&materialID=".$materialID);
         }
 
         function deleteCartMaterial()
@@ -166,7 +166,7 @@
                 $this->cartDAO->updateCartMaterialByID($customerID, $materialID,$materialQuantity);
             }
 
-            header("Location: http://localhost/CarpentryProject/controllers/CartController.php?action=getAllCartMaterials&customerID=".$customerID."&materialID=".$materialID);
+            header("Location: http://localhost:8080/CarpentryProject/controllers/CartController.php?action=getAllCartMaterials&customerID=".$customerID."&materialID=".$materialID);
 
         }
         
